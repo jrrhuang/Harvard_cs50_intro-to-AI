@@ -129,7 +129,7 @@ def top_sentences(query, sentences, idfs, n):
         # Calc total idf in sentence
         s_tokens = sentences[sentence]
         idf = sum(idfs[word] for word in query
-                  if word in sentence)
+                  if word in s_tokens)
 
         # Calc query term density in sentence
         qtd = sum(word in query for word in s_tokens) / len(s_tokens)
